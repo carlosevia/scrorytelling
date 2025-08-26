@@ -18,9 +18,11 @@ jobs:
       - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
-      - name: Install Closeread extension
+      - name: Install Closeread extension (non-interactive)
+        env:
+          QUARTO_NONINTERACTIVE: "true"
         run: |
-          quarto add qmd-lab/closeread
+          quarto add qmd-lab/closeread --no-prompt
 
       - name: Render site
         uses: quarto-dev/quarto-actions/render@v2
