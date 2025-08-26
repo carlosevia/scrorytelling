@@ -1,23 +1,37 @@
-/* --- Virginia Tech flavored Closeread theme tweaks --- */
-
-/* Brand colors */
-$vt-maroon:  #861F41;
-$vt-orange:  #E57200;
+/*-- scss:defaults --*/
+/* Brand palette (Virginia Tech) */
+$vt-maroon:   #861F41;
+$vt-orange:   #E57200;
 $vt-warmgray: #75787B;
 
-/* Base text & links */
+/* Map VT colors to Quarto/Bootstrap variables */
+$primary:            $vt-maroon;
+$secondary:          $vt-orange;
+$link-color:         $primary;
+$navbar-bg:          #ffffff;
+$navbar-fg:          $vt-maroon;
+$navbar-hl:          $vt-orange;
+$code-color:         $vt-maroon;
+$body-color:         #222;
+
+/* Optional typography tweaks */
+$font-size-base:     1rem;
+$headings-color:     $vt-maroon;
+
+/*-- scss:rules --*/
 body {
   font-feature-settings: "liga", "kern";
   line-height: 1.55;
 }
 
+/* Links */
 a, a:visited {
   text-decoration: none;
   border-bottom: 1px solid rgba(0,0,0,.08);
 }
 a:hover { border-bottom-color: currentColor; }
 
-/* Hero + sections (Closeread blocks) */
+/* Closeread blocks */
 .cr-hero {
   padding: 12vh 0 10vh 0;
   text-align: center;
@@ -25,10 +39,9 @@ a:hover { border-bottom-color: currentColor; }
     radial-gradient(1200px 600px at 50% -10%, rgba(134,31,65,.08), transparent 60%),
     linear-gradient(180deg, rgba(229,114,0,.05), transparent 40%);
 }
-
 .cr-hero h1 {
   color: $vt-maroon;
-  letter-spacing: 0.5px;
+  letter-spacing: .5px;
   margin-bottom: .5rem;
 }
 
@@ -38,23 +51,20 @@ a:hover { border-bottom-color: currentColor; }
   margin-left: clamp(0px, 3vw, 40px);
   padding-left: clamp(16px, 2vw, 28px);
 }
+.cr-section h2, .cr-section h3 { color: $vt-maroon; }
 
-.cr-section h2, .cr-section h3 {
-  color: $vt-maroon;
-}
-
-/* Emphasis / buttons */
+/* Buttons / CTAs */
 button, .btn, .cr-cta {
   display: inline-block;
   padding: .6rem 1rem;
   border-radius: 10px;
   background: $vt-orange;
-  color: white;
+  color: #fff;
   border: none;
 }
 button:hover, .btn:hover, .cr-cta:hover { filter: brightness(.95); }
 
-/* Navbar accent */
+/* Navbar accents (fallbacks if theme vars don’t cover) */
 .navbar, .navbar .nav-link.active {
   --bs-navbar-brand-color: #{$vt-maroon};
   --bs-navbar-hover-color: #{$vt-orange};
