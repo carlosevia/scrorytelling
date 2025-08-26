@@ -16,11 +16,7 @@ format:
   closeread-html:
     toc: false
     smooth-scroll: true
-    css: 
-      - styles/vt.scss
+    theme:
+      - styles/vt.scss     # <-- SCSS gets compiled here
     include-in-header: |
       <link rel="icon" href="images/vt-logo.svg">
-
-# Quarto will auto-install the extension when rendering in Actions
-filters:
-  - quarto                                         
