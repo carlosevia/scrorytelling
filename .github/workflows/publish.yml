@@ -1,15 +1,22 @@
-name: Build and Publish (Quarto + Closeread)
+name: Build & Deploy Closeread (GitHub Pages)
 
 on:
   push:
     branches: [ main ]
   workflow_dispatch:
 
+# Required for the Pages deploy action
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 jobs:
-  build-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -18,18 +25,30 @@ jobs:
       - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
-      - name: Install Closeread extension (non-interactive)
+      # Install Closeread non-interactively (no hangs)
+      - name: Install Closeread extension
         env:
           QUARTO_NONINTERACTIVE: "true"
         run: |
           quarto add qmd-lab/closeread --no-prompt
 
+      # Render the site (defaults to _site/)
       - name: Render site
         uses: quarto-dev/quarto-actions/render@v2
 
-      - name: Publish to GitHub Pages
-        uses: quarto-dev/quarto-actions/publish@v2
+      # Upload the rendered site as a Pages artifact
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          target: gh-pages
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
