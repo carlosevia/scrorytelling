@@ -12,20 +12,23 @@ jobs:
   build-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - uses: quarto-dev/quarto-actions/setup@v2
+      - name: Setup Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
 
-      # Vendored install: no prompts, no waiting
-      - name: Fetch Closeread extension (non-interactive)
+      - name: Install Closeread extension (non-interactive)
+        env:
+          QUARTO_NONINTERACTIVE: "true"
         run: |
-          mkdir -p _extensions/qmd-lab
-          git clone --depth 1 https://github.com/qmd-lab/closeread tmp-closeread
-          cp -r tmp-closeread/_extensions/closeread _extensions/qmd-lab/closeread
+          quarto add qmd-lab/closeread --no-prompt
 
-      - uses: quarto-dev/quarto-actions/render@v2
+      - name: Render site
+        uses: quarto-dev/quarto-actions/render@v2
 
-      - uses: quarto-dev/quarto-actions/publish@v2
+      - name: Publish to GitHub Pages
+        uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages
         env:
