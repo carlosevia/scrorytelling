@@ -8,6 +8,8 @@ website:
     left:
       - href: index.qmd
         text: Home
+      - href: zoom.qmd
+        text: Zoom example
       - href: about.qmd
         text: About
   page-navigation: true
