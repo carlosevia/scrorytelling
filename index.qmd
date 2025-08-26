@@ -10,37 +10,21 @@ Scroll to explore how **Closeread** turns narrative + data into engaging scrolly
 *Chicago Maroon* + *Burnt Orange* accents included.
 :::
 
+::::{.cr-section}
 
-::: {.cr-section}
-## What is Closeread?
-Closeread is a Quarto format for **scrollytelling** — long-form pages where the text you scroll
-through controls visual elements. You author in `.qmd` (Markdown + YAML), and GitHub Actions
-builds everything into a static site.
-
-
+Section with content to be handled by closeread.
 
 :::{#cr-sticky}
-This is sticky!
+Text that will be treated as the sticky element.
 
 This text will be _stuck_ as you scroll up and down.
 :::
 
-:::
+Text that triggers the sticky element. @cr-sticky
 
-::: {.cr-section}
-## Why this demo?
-- 100% GitHub workflow (no local terminal)
-- VT look-and-feel via a tiny SCSS file
-- Ready to extend with your course or project content
-:::
+More text that will appear next to the sticky element 
+as you scroll down.
 
-::: {.cr-section}
-## How it works (in this repo)
-1. GitHub Actions installs **Quarto** and **Closeread**.
-2. It renders this project to static HTML/JS/CSS.
-3. It publishes to **GitHub Pages** (`gh-pages` branch).
+Last sentence that will show up next to the sticky element.
 
-
-
-*Tip:* Edit this page right in GitHub → Commit → See the site update automatically.
-:::
+::::
