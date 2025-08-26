@@ -16,7 +16,7 @@ Scroll to explore how **Closeread** turns narrative + data into engaging scrolly
 Closeread is a Quarto format for **scrollytelling** — long-form pages where the text you scroll
 through controls visual elements. You author in `.qmd` (Markdown + YAML), and GitHub Actions
 builds everything into a static site.
-:::
+
 
 
 :::{#cr-sticky}
@@ -25,6 +25,7 @@ This is sticky!
 This text will be _stuck_ as you scroll up and down.
 :::
 
+:::
 
 ::: {.cr-section}
 ## Why this demo?
@@ -38,6 +39,8 @@ This text will be _stuck_ as you scroll up and down.
 1. GitHub Actions installs **Quarto** and **Closeread**.
 2. It renders this project to static HTML/JS/CSS.
 3. It publishes to **GitHub Pages** (`gh-pages` branch).
+
+
 
 *Tip:* Edit this page right in GitHub → Commit → See the site update automatically.
 :::
