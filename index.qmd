@@ -10,12 +10,21 @@ Scroll to explore how **Closeread** turns narrative + data into engaging scrolly
 *Chicago Maroon* + *Burnt Orange* accents included.
 :::
 
+
 ::: {.cr-section}
 ## What is Closeread?
 Closeread is a Quarto format for **scrollytelling** — long-form pages where the text you scroll
 through controls visual elements. You author in `.qmd` (Markdown + YAML), and GitHub Actions
 builds everything into a static site.
 :::
+
+
+:::{#cr-sticky}
+This is sticky!
+
+This text will be _stuck_ as you scroll up and down.
+:::
+
 
 ::: {.cr-section}
 ## Why this demo?
