@@ -1,0 +1,20 @@
+---
+title: About This Demo
+format: closeread-html
+---
+
+::: {.cr-section}
+### VT Branding Notes
+This site uses a minimal SCSS file with **Chicago Maroon** and **Burnt Orange** accents.
+
+- Maroon: `#861F41`
+- Burnt Orange: `#E57200`
+
+You can adjust typography and spacing in `styles/vt.scss`.
+:::
+
+::: {.cr-section}
+### Extend the Story
+Closeread supports multiple sections (`.cr-section`, `.cr-hero`, etc.).  
+Add media, code outputs, and figures like any Quarto page.
+:::

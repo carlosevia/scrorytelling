@@ -1,0 +1,34 @@
+---
+title: Welcome to Closeread @ VT
+format: closeread-html
+---
+
+::: {.cr-hero}
+# This is an experiment
+
+Scroll to explore how **Closeread** turns narrative + data into engaging scrollytelling.  
+*Chicago Maroon* + *Burnt Orange* accents included.
+:::
+
+::: {.cr-section}
+## What is Closeread?
+Closeread is a Quarto format for **scrollytelling** — long-form pages where the text you scroll
+through controls visual elements. You author in `.qmd` (Markdown + YAML), and GitHub Actions
+builds everything into a static site.
+:::
+
+::: {.cr-section}
+## Why this demo?
+- 100% GitHub workflow (no local terminal)
+- VT look-and-feel via a tiny SCSS file
+- Ready to extend with your course or project content
+:::
+
+::: {.cr-section}
+## How it works (in this repo)
+1. GitHub Actions installs **Quarto** and **Closeread**.
+2. It renders this project to static HTML/JS/CSS.
+3. It publishes to **GitHub Pages** (`gh-pages` branch).
+
+*Tip:* Edit this page right in GitHub → Commit → See the site update automatically.
+:::

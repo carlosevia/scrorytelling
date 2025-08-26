@@ -1,0 +1,26 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Closeread • Virginia Tech Demo"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About
+  page-navigation: true
+
+format:
+  closeread-html:
+    toc: false
+    smooth-scroll: true
+    css: 
+      - styles/vt.scss
+    include-in-header: |
+      <link rel="icon" href="images/vt-logo.svg">
+
+# Quarto will auto-install the extension when rendering in Actions
+filters:
+  - quarto                                         

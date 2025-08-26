@@ -1,0 +1,61 @@
+/* --- Virginia Tech flavored Closeread theme tweaks --- */
+
+/* Brand colors */
+$vt-maroon:  #861F41;
+$vt-orange:  #E57200;
+$vt-warmgray: #75787B;
+
+/* Base text & links */
+body {
+  font-feature-settings: "liga", "kern";
+  line-height: 1.55;
+}
+
+a, a:visited {
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0,0,0,.08);
+}
+a:hover { border-bottom-color: currentColor; }
+
+/* Hero + sections (Closeread blocks) */
+.cr-hero {
+  padding: 12vh 0 10vh 0;
+  text-align: center;
+  background:
+    radial-gradient(1200px 600px at 50% -10%, rgba(134,31,65,.08), transparent 60%),
+    linear-gradient(180deg, rgba(229,114,0,.05), transparent 40%);
+}
+
+.cr-hero h1 {
+  color: $vt-maroon;
+  letter-spacing: 0.5px;
+  margin-bottom: .5rem;
+}
+
+.cr-section {
+  padding: 6vh 0;
+  border-left: 4px solid rgba(134,31,65,.15);
+  margin-left: clamp(0px, 3vw, 40px);
+  padding-left: clamp(16px, 2vw, 28px);
+}
+
+.cr-section h2, .cr-section h3 {
+  color: $vt-maroon;
+}
+
+/* Emphasis / buttons */
+button, .btn, .cr-cta {
+  display: inline-block;
+  padding: .6rem 1rem;
+  border-radius: 10px;
+  background: $vt-orange;
+  color: white;
+  border: none;
+}
+button:hover, .btn:hover, .cr-cta:hover { filter: brightness(.95); }
+
+/* Navbar accent */
+.navbar, .navbar .nav-link.active {
+  --bs-navbar-brand-color: #{$vt-maroon};
+  --bs-navbar-hover-color: #{$vt-orange};
+}
